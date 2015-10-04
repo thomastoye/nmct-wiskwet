@@ -31,3 +31,131 @@ Bij oefeningen moet je altijd proberen om de noemer wortelvrij te maken.
 \[(A-B)(A+B) = A^2 - B^2\]
 
 Tip: probeer bij oefeningen met machten wortels om te zetten naar machten, bijvoorbeeld \( \sqrt[n]{a} = a^{1/n}  \)
+
+\subsection{Merkwaardige producten}
+
+\[(a+b)^2 = a^2 + 2ab + b^2 \]
+\[(a-b)^2 = a^2 - 2ab + b^2 \]
+
+\[a^2-b^2 = (a-b)(a+b) \]
+
+\[a^3 - b^3 = (a-b)(a^2 + ab + b^2)\]
+\[a^3 + b^3 = (a+b)(a^2 - ab + b^2)\]
+
+\subsection{Binomium van Newton}
+
+Tweetermen tot de \(n\)-de macht kan je uitwerken met het binomium van Newton.
+
+\[
+(a+b)^n = \sum_{i=0}^{n}{ \Comb{i}{n} * a^i * b^{n-i} } \textrm{ met } \Comb{i}{n} = \frac{n!}{i!(n-i)!}
+\]
+
+\(\Comb{i}{n}\) is de binomiaalcoeffient.
+
+\subsection{Combinaties}
+
+\(\Comb{i}{n}\) wil zeggen \emph{op hoeveel manieren kan je \(i\) items kiezen uit \(n\) items}.
+
+\[
+\Comb{k}{n} = \frac{n!}{k!(n-k)!}
+\]
+
+\[ \Comb{n}{n} = 1 \]
+
+\[\Comb{1}{n} = n\]
+
+\subsection{Faculteit}
+
+\[
+n! = n * (n-1) * (n-2) * \cdots * (n - (n-1))
+\]
+
+Per definitie:
+
+\[
+0! = 1\]
+\[1! = 1
+\]
+
+\subsection{Driehoek van Pascal}
+
+De driehoek van Pascal is een gemakkelijkere manier om de coefficienten te berekenen bij het binomium van Newton: de driehoek van Pascal.
+
+\begin{tikzpicture}
+\foreach \n in {0,...,7} {
+	\foreach \k in {0,...,\n} {
+		\node at (\k-\n/2,-\n) {$\binomialCoefficient{\n}{\k}$};
+	}
+}
+\end{tikzpicture}
+
+Bij een \(n\)-de macht zijn er \(n+1\) factoren in de uitkomst.
+
+Voorbeeld:
+
+\[
+(a+b)^4
+\]
+
+Tot de vierde macht, dus er zullen vijf factoren zijn. De factoren uit de driehoek zijn 1, 4, 6, 4 en 1.
+
+\[
+(a+b)^4 = 1 a^0 b^4 + 4 a^1 b^3 + 6 a^2 b^2 + 4 a^3 b^1 + 1 a^4 b^0
+\]
+
+\subsection{Ontbinden in factoren}
+
+\begin{enumerate}
+	\item Gemeenschappelijke factoren buiten haakjes brengen
+	
+	\[ 3 x^3 - x^2 + 6x - 2 = x^2(3x - 1) + 2(3x - 1) = (3x-1)(x^2 + 2) \]
+	
+	Merk op dat je nu zeer gemakkelijk de nulpunten kan zien.
+	
+	\item Toepassen van de merkwaardige producten
+	
+	\item Zoeken naar delers
+	
+	\[ 2x^3 - 3x^2 - 5x + 6 \]
+	
+	We kijken naar de constante term: we zoeken een deler van alle termen. Die deler moet dus ook een deler zijn van de constante term, en bij die constante term zie je snelst of een getal al dan niet een deler is.
+	
+	De delers van 6 zijn \( \lbrace \pm 1, \pm 2, \pm 3, \pm 6 \rbrace  \).
+	
+	Voor het gemak beginnen we met de kleinste deler. We beginnen nu met 1. We vullen 1 in in \(x\), wanneer we nul uitkomen, weten we dat 1 een deler is.
+	
+	\[ 2 * 1 - 3 * 1 - 5 + 6 = 0 \]
+	
+	We komen nul uit, dus we weten dat 1 een deler is. Moesten we geen nul uitkomen, ga je door met de volgende deler. Kom je nooit nul uit, dan zijn er geen delers.
+	
+	1 is een deler, dus kunnen we \( (x - 1) \) ( \((x-a)\) dus) afsplitsen. Zo verkrijgen we een veelterm van een graad lager.
+	
+	\[ (x-1)(a x^2 + bx + c) \]
+	
+	Met a, b, c te bepalen. Die bepaal je via het rekenschema van Horner.
+	
+	\[ \horner{2,-3,-5,6}{2}{2,-1,6}{2,-1,-6,0} \]
+	
+	De coëfficiënten zijn 2, -1 en -6.
+	
+	\[ 2x^3 - 3x^2 - 5x + 6 = (x-1)(2x^2 - x - 6)  \]
+	
+	Nu ga je verder met het ontbinden van \(2x^2 - x - 6\).
+	
+\end{enumerate}
+
+\subsubsection{Andere methode om een tweedegraadsveelterm te ontbinden: via de discriminant}
+
+In \(a x^2 + bx + c \) is de discriminant \( \Delta \) gegeven door \(D \textrm{ (not.)}= \Delta = b^2 - 4ac \)
+
+Er zijn nu drie mogelijke gevallen:
+
+\begin{enumerate}
+	\item \(\Delta < 0 \): geen reële ontbinding mogelijk
+	\item \(\Delta > 0 \): 2 nulpunten gegeven door \( x_{1,2} = \frac{-b \pm \sqrt{\Delta}}{2a} \)
+	\item \(\Delta = 0\) 2 gelijke nulpunten gegeven door \( x_1 = x_2 = \frac{-b}{2a} \) (reden: \(\Delta = 0 => \sqrt{\Delta} = 0 \)[]
+\end{enumerate}
+
+Om nu te ontbinden, kunnen we de volgende formule gebruiken:
+
+\[ ax^2 + bx + c = a(x - x_1)(x - x_2) \]
