@@ -59,3 +59,68 @@ De uitkomst is de rico van de raaklijn aan de kromme \(v(t)\) in het punt \(P_1\
 \[
 a(t) = \frac{d}{dt} (v(t)) = \frac{d}{dt} (\frac{d}{dt} (x(t)))
 \]
+
+\subsection{Beweging met constante versnelling}
+
+Door zwaartekracht: \(9.81 \frac{m}{s^2}\)
+
+\[ v_{gem} = \frac{\Delta x}{\Delta t} = \frac{x - x_0}{t} => x = x_0 + v_{gem} * t \]
+
+We weten dat \( v_{gem} = \frac{v_0 + v}{2} \) en \( a = \frac{\Delta v}{\Delta t} = \frac{v - v_0}{t} => v = v_0 + at \)
+
+
+\[ x = x_0 + \frac{v_0 + v}{2}t
+ = x_0 + \frac{1}{2} v_0 t + \frac{1}{2} v t
+ = x_0 + \frac{1}{2} v_0 t + \frac{1}{2} \left(  v_0 + at \right) t = x_0 + v_0 t + \frac{1}{2} a t^2 \]
+ 
+ \subsection{Vrije val}
+ 
+ \subsubsection{Vanuit rust}
+ 
+ Vanuit rust betekent dat \(v_0 = 0 \frac{m}{s}\).
+ 
+ Gewoon invullen in formule:
+ 
+ \[
+ y(t) = y_0 + v_0t + \frac{1}{2} a t^2
+ \]
+ 
+ \(y_0\) nemen we als nul (oriëntatie van de y-as) en \(v_0\) is 0 (vanuit rust) en de versnelling is \(9.81 \frac{m}{s^2}\). Dus is de formule \( y(t) = \frac{1}{2} * 9.81 \frac{m}{s^2} * t^2  \).
+ 
+ \subsubsection{Met beginsnelheid}
+ 
+ Bijvoorbeeld: \( v_0 = \frac{m}{s}\)
+ 
+ \[
+ y(t) = y_0 + v_0 t + \frac{1}{2} a t^2 = 3t + 9.81 \frac{m}{s} t^2
+ \]
+ 
+ De snelheid in een punt kan je vinden door de limiet te nemen, of door af te leiden.
+ 
+ \[ v(t) = \frac{dy}{dt} = 0 + v_{0y} + \frac{1}{2}a2t = v_{0y} + at \]
+ 
+ \[ v(t=2s) = v_{0y} + 9.8 * 2s = 3 \frac{m}{s} + 19.60 \frac{m}{s} = 22.60 \frac{m}{s} \]
+ 
+ \subsubsection{Bal opgooien}
+ 
+ Typische vragen: wanneer bereikt de bal hoogste punt, duur van de beweging, snelheid bij het terugkomen, tijd wanneer de bal hoogte \(y\) bereikt.
+ 
+ We nemen punt A als vertrekpunt van de bal, punt B als het hoogste punt, en punt C als het eindpunt (waar de bal de grond raakt).
+ 
+ \( t_{B \to C} \) is de tijd tussen B en C.
+ 
+ Oplossingsmethodes:
+ 
+ \begin{enumerate}
+ 	\item Wanneer bereikt de bal het hoogste punt?
+ 	In het hoogste punt is \(v=0\). We vullen de algemene formule \(y = y_0 + v_0t + \frac{1}{2} at^2 \) in, aannemende dat \(y_0 = 0\). In het hoogste punt: \( y_{max} = v_0t - \frac{1}{2} g t^2 \). We weten dat in \(y_{max}\): \( v = 0 \frac{m}{s}\). Algemeen geldt \( a = \frac{\Delta v}{\Delta t} => v = v_0 + at \), in het hoogste punt: \( 0 = v_0\frac{m}{s} - 9.8 \frac{m}{s} \). Nu kan je \(t\) berekenen: \(t = \frac{v_0}{9.80 \frac{m}{s}}\). Dan substitueer je terug in de eerste formule om de hoogte te vinden.
+ 	
+ 	\item Snelheid bij het terugkomen
+ 	Algemeen: \(a = \frac{\Delta v}{\Delta t} => v = v_0 + at\). \(v_C = v_B - g * t_{B \to C} = 0 - 9.8 \frac{m}{s^2} * t_{B \to C} \).
+ 	
+ 	\(t_{B \to C}\) weet je uit de vorige stap. \(v_B\) is nul, dit is de snelheid in het hoogste punt.
+ 	
+ 	\item Tijd wanneer een bepaalde hoogte bereikt wordt
+ 	Algemene formule omvormen.
+ \end{enumerate}
+ 
