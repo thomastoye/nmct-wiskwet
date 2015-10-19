@@ -52,31 +52,6 @@ Tweetermen tot de \(n\)-de macht kan je uitwerken met het binomium van Newton.
 
 \(\Comb{i}{n}\) is de binomiaalcoeffient.
 
-\subsection{Combinaties}
-
-\(\Comb{i}{n}\) wil zeggen \emph{op hoeveel manieren kan je \(i\) items kiezen uit \(n\) items}.
-
-\[
-\Comb{k}{n} = \frac{n!}{k!(n-k)!}
-\]
-
-\[ \Comb{n}{n} = 1 \]
-
-\[\Comb{1}{n} = n\]
-
-\subsection{Faculteit}
-
-\[
-n! = n * (n-1) * (n-2) * \cdots * (n - (n-1))
-\]
-
-Per definitie:
-
-\[
-0! = 1\]
-\[1! = 1
-\]
-
 \subsection{Driehoek van Pascal}
 
 De driehoek van Pascal is een gemakkelijkere manier om de coefficienten te berekenen bij het binomium van Newton: de driehoek van Pascal.
@@ -103,7 +78,33 @@ Tot de vierde macht, dus er zullen vijf factoren zijn. De factoren uit de drieho
 (a+b)^4 = 1 a^0 b^4 + 4 a^1 b^3 + 6 a^2 b^2 + 4 a^3 b^1 + 1 a^4 b^0
 \]
 
-\subsection{Ontbinden in factoren}
+
+\section{Combinaties}
+
+\(\Comb{i}{n}\) wil zeggen \emph{op hoeveel manieren kan je \(i\) items kiezen uit \(n\) items}.
+
+\[
+\Comb{k}{n} = \frac{n!}{k!(n-k)!}
+\]
+
+\[ \Comb{n}{n} = 1 \]
+
+\[\Comb{1}{n} = n\]
+
+\section{Faculteit}
+
+\[
+n! = n * (n-1) * (n-2) * \cdots * (n - (n-1))
+\]
+
+Per definitie:
+
+\[
+0! = 1\]
+\[1! = 1
+\]
+
+\section{Ontbinden in factoren}
 
 \begin{enumerate}
 	\item Gemeenschappelijke factoren buiten haakjes brengen
@@ -144,7 +145,7 @@ Tot de vierde macht, dus er zullen vijf factoren zijn. De factoren uit de drieho
 	
 \end{enumerate}
 
-\subsubsection{Andere methode om een tweedegraadsveelterm te ontbinden: via de discriminant}
+\subsection{Andere methode om een tweedegraadsveelterm te ontbinden: via de discriminant}
 
 In \(a x^2 + bx + c \) is de discriminant \( \Delta \) gegeven door \(D \textrm{ (not.)}= \Delta = b^2 - 4ac \)
 
@@ -161,7 +162,7 @@ Om nu te ontbinden, kunnen we de volgende formule gebruiken:
 \[ ax^2 + bx + c = a(x - x_1)(x - x_2) \]
 
 
-\subsection{Vergelijkingen}
+\section{Vergelijkingen}
 
 \begin{enumerate}
 	\item Eerste graad: \(ax + b = 0\)
@@ -217,8 +218,38 @@ Om nu te ontbinden, kunnen we de volgende formule gebruiken:
 	Nu bereken je de discriminant, daarna substitueer je terug naar x.
 	
 	\item Andere hogere-graadsvergelijkingen: via Horner
-	
-	
 
 \end{enumerate}
 
+\subsection{Gebroken vergelijkingen}
+
+Voorbeeld:
+
+\[ \frac{1}{x^2 - 4x} + \frac{2}{-x^2 + 16} = \frac{-1}{5x} \]
+
+Oplossingsmethode: herinner dat \( \frac{T(X)}{N(X)} = 0 \iff T(X) = 0,  N(X) \ne 0 \). Probeer alles op gelijke noemer te zetten, zoek de nulpunten van teller en noemer. De oplossingen zijn de oplossingen van de teller zonder de oplossingen van de noemer.
+
+\subsection{Ongelijkheden}
+
+Oplossingsmethode: 
+
+\begin{enumerate}
+	\item Alles aan een kant brengen
+	\item Nulpunten berekenen
+	\item Tekenverloop bepalen
+	\item Bepalen wanneer gelijkheid waar is
+\end{enumerate}
+
+\subsubsection{Gebroken ongelijkheid}
+
+Voorbeeld:
+
+\[ \frac{x^3 - 7x + 6}{x^2 + x} > 0 \]
+
+\begin{enumerate}
+	\item Herleiden op nul
+	\item \( \frac{T(X)}{N(X)} > 0 \)
+	\item Tekenverloop \(T(X)\)
+	\item Tekenverloop \(N(X)\)
+	\item Oplossing
+\end{enumerate}
