@@ -159,3 +159,66 @@ Er zijn nu drie mogelijke gevallen:
 Om nu te ontbinden, kunnen we de volgende formule gebruiken:
 
 \[ ax^2 + bx + c = a(x - x_1)(x - x_2) \]
+
+
+\subsection{Vergelijkingen}
+
+\begin{enumerate}
+	\item Eerste graad: \(ax + b = 0\)
+	
+	Met \(a \in \mathbb{R}_0, b \in \mathbb{R} \)
+	
+	\[=> x = \frac{-b}{a} \]
+	
+	\item Tweede graad: \(ax^2 + bx + c = 0\)
+	
+	Met \( a \in \mathbb{R}_0, b \in \mathbb{R}, c \in \mathbb{R} \)
+	
+	\( \Delta = b^2 - 4ac  \)
+	
+	\subitem \(\Delta < 0\): geen oplossingen in \(\mathbb{R}\)
+	\subitem \(\Delta > 0\): twee verschillende oplossingen in \(\mathbb{R}\): \(x_{1,2} = \frac{-b \pm \sqrt{\Delta}}{2a} \)
+	\subitem \(\Delta = 0\): twee gelijke oplossingen in \(\mathbb{R}\): \(x_1 = x_2 = \frac{-b}{2a}\)
+	
+	Indien er een ontbinding mogelijk is, dan is \( ax^2 + bx + c = 0 \) ontbindbaar tot \( a(x-x_1)(x-x_2) = 0\).
+	
+	Een speciaal type van \(ax^2 + bx + c = 0\) is \( af(x)^2 + bf(x) + c = 0\ \). Dit soort vergelijkingen kan je oplossen door \(t\) te introduceren, en deze gelijk te stellen aan \(f(x)\). Dan los je de vergelijking \( at^2 + bt + c = 0 \) op via de discriminant naar \(t_{1,2}\)
+	
+	\item Wederkerige vergelijkingen
+	
+	Wederkerige vergelijkingen zijn vergelijkingen met symmetrische coëfficiënten.
+	
+	\subitem Voorbeeld van de derde graad:
+	
+	\[ax^3 + bx^2 + bx + a = 0\]
+	\[\iff a(x^3 + 1) + bx(x + 1) = 0\]
+	\[\iff a(x+1)(x^2 - x + 1) + bx(x + 1) = 0 \]
+	\[\iff (x+1)(ax^2 + (b-a)x + a) = 0 \]
+	
+	Daarna los je de tweedegraadsvergelijking verder op met de discriminant.
+	
+	\subitem Voorbeeld van de vierde graad
+	
+	\[ ax^4 + bx^3 + cx^2 + bx + a = 0 \]
+	
+	Om te beginnen, delen we door \(x^2\).	Dit mag, want de constante term is niet nul (wat betekent dat \(x=0\) geen oplossing is, wat betekent dat \(x^2\) niet nul is).
+	
+	\[ \iff \frac{ax^4 + bx^3 + cx^2 + bx + a}{x^2} = \frac{0}{x^2} \]
+	\[ ax^2 + bx + cx^2 + \frac{b}{x} + \frac{a}{x^2} = 0 \]
+	\[ a(x^2 + \frac{1}{x^2}) + b(x+\frac{1}{x}) + c = 0 \]
+	
+	Stel \( x + \frac{1}{x} \) gelijk aan \(t\)  \( => (x+\frac{1}{x})^2 = t^2  \iff x^2 + 2 x \frac{1}{x} + (\frac{1}{2})^2 = t^2 \iff x^2 + \frac{1}{x^2} = t^2 - 2 \)
+	
+	Na substitutie|
+	
+	\[ a(t^2 - 2) + bt + c = 0 \]
+	\[ \iff at^2 + bt + (c - 2a) = 0 \]
+	
+	Nu bereken je de discriminant, daarna substitueer je terug naar x.
+	
+	\item Andere hogere-graadsvergelijkingen: via Horner
+	
+	
+
+\end{enumerate}
+
